@@ -2,19 +2,11 @@ const NOTEBOOK_SELECTOR = '[data-notebook]';
 const TAB_SELECTOR = '[role="tab"]';
 const PAGE_SELECTOR = '.notebook-page';
 const NEXT_SELECTOR = '[data-notebook-next]';
-const BILL_SELECTOR = '[data-bill]';
 const LIVE_CLASS = 'is-live';
 const FLIPPED_CLASS = 'is-flipped';
 const DEPTH_PROPERTY = '--depth';
-const DRIFT_PROPERTY = '--drift';
-const BILL_TRACK_CLASS = 'bill-track';
-const BILL_SEPARATOR_CLASS = 'bill-sep';
-const VISUALLY_HIDDEN_CLASS = 'visually-hidden';
-const BILL_REPEATS = 8;
-const BILL_DRIFT_SPEED = 0.45;
 const KEY_NEXT = 'ArrowRight';
 const KEY_PREVIOUS = 'ArrowLeft';
-const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)';
 
 function startNotebook(notebook) {
   const tabs = [...notebook.querySelectorAll(TAB_SELECTOR)];
@@ -54,48 +46,4 @@ function startNotebook(notebook) {
   notebook.classList.add(LIVE_CLASS);
 }
 
-function buildBillTrack(text) {
-  const track = document.createElement('div');
-  track.className = BILL_TRACK_CLASS;
-  track.setAttribute('aria-hidden', 'true');
-  for (let repeat = 0; repeat < BILL_REPEATS; repeat += 1) {
-    const word = document.createElement('span');
-    word.textContent = text;
-    const separator = document.createElement('i');
-    separator.className = BILL_SEPARATOR_CLASS;
-    track.append(word, separator);
-  }
-  return track;
-}
-
-function startBill(bill) {
-  const rows = [...bill.children].map((row) => {
-    const text = row.dataset.billText;
-    const track = buildBillTrack(text);
-    const label = document.createElement('span');
-    label.className = VISUALLY_HIDDEN_CLASS;
-    label.textContent = text;
-    row.replaceChildren(label, track);
-    return { row, track, direction: Number(row.dataset.direction) };
-  });
-  if (window.matchMedia(REDUCED_MOTION_QUERY).matches) return;
-
-  let frameRequested = false;
-  const drift = () => {
-    frameRequested = false;
-    rows.forEach(({ row, track, direction }) => {
-      const rect = row.getBoundingClientRect();
-      const distanceFromCenter = rect.top + rect.height / 2 - window.innerHeight / 2;
-      track.style.setProperty(DRIFT_PROPERTY, `${distanceFromCenter * BILL_DRIFT_SPEED * direction}px`);
-    });
-  };
-  window.addEventListener('scroll', () => {
-    if (frameRequested) return;
-    frameRequested = true;
-    requestAnimationFrame(drift);
-  }, { passive: true });
-  drift();
-}
-
 document.querySelectorAll(NOTEBOOK_SELECTOR).forEach(startNotebook);
-document.querySelectorAll(BILL_SELECTOR).forEach(startBill);

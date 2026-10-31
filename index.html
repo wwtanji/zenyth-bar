@@ -11,17 +11,17 @@
   <meta property="og:title" content="Zenyth Bar Nitra | Koktejlový bar">
   <meta property="og:description" content="Autorské koktejly, terasa a rezervácie. Svätoplukovo námestie 1/B, Nitra.">
   <meta property="og:image" content="photos/bar-zelena-stena.jpg">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="900">
+  <meta property="og:image:alt" content="Barový pult so stenou z machu a rastlín v Zenyth Bar">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Hanken+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="motion.css">
   <link rel="stylesheet" href="terrace.css">
   <link rel="stylesheet" href="sections.css">
-  <link rel="stylesheet" href="hero.css">
   <script defer src="script.js"></script>
-  <script defer src="motion.js"></script>
-  <script type="module" src="hero.js"></script>
   <script type="module" src="terrace.js"></script>
   <script type="module" src="sections.js"></script>
   <script type="application/ld+json">
@@ -65,79 +65,71 @@
       <a href="#menu">Menu</a>
       <a href="#terasa">Terasa</a>
       <a href="#kontakt">Kontakt</a>
+      <a class="button button-gold topbar-book" href="https://zenythbar.eatbu.com/" rel="noopener">Rezervovať stôl</a>
     </nav>
   </header>
 
   <main id="top">
     <section class="hero">
-      <picture class="hero-photo">
-        <source type="image/webp" srcset="photos/bar-zelena-stena.webp">
-        <img src="photos/bar-zelena-stena.jpg" width="1600" height="900" fetchpriority="high"
-             alt="Barový pult so stenou z machu a rastlín, červený LED pásik a poličky s fľašami">
-      </picture>
-      <picture class="hero-photo hero-photo-lit" aria-hidden="true">
-        <source type="image/webp" srcset="photos/bar-zelena-stena.webp">
-        <img src="photos/bar-zelena-stena.jpg" width="1600" height="900" alt="">
-      </picture>
-      <div class="hero-arch" aria-hidden="true"></div>
-      <div class="hero-glow" aria-hidden="true"></div>
-      <p class="hero-hint" aria-hidden="true">
-        <span class="hero-hint-pointer">Pohni myšou a rozsvieť stenu.</span>
-        <span class="hero-hint-touch">Ťahaj prstom a rozsvieť stenu.</span>
-      </p>
-      <div class="hero-content">
+      <div class="hero-copy">
         <p class="hero-status" data-open-status>Otváracie hodiny nižšie</p>
-        <p class="hero-lede">Koktejlový bar na Svätoplukovom námestí v Nitre. Autorské drinky, klasika a sezónna ponuka.</p>
+        <h1 class="hero-wordmark">Zenyth<span class="hero-wordmark-sub">cocktail bar</span></h1>
+        <p class="hero-lede">Koktejlový bar na Svätoplukovom námestí v Nitre. Autorské drinky, klasika a terasa s výhľadom na centrum a hrad.</p>
         <div class="actions">
           <a class="button button-gold" href="https://zenythbar.eatbu.com/" rel="noopener">Rezervovať stôl</a>
           <a class="button button-line" href="tel:+421949704217">Zavolať 0949 704 217</a>
         </div>
-        <h1 class="hero-wordmark">Zenyth<span class="hero-wordmark-sub">cocktail bar</span></h1>
+      </div>
+      <div class="arch-frame hero-arch">
+        <picture>
+          <source type="image/webp" srcset="photos/terasa-vyhlad.webp">
+          <img src="photos/terasa-vyhlad.jpg" width="1200" height="1598" fetchpriority="high"
+               alt="Terasa baru s pohovkami a výhľadom na strechy Nitry a hrad na kopci">
+        </picture>
       </div>
     </section>
 
-    <div class="marquee" aria-hidden="true">
-      <div class="marquee-track">
-        <span>Zenyth cocktail bar &nbsp;✦&nbsp; Svätoplukovo námestie 1/B &nbsp;✦&nbsp; Nitra &nbsp;✦&nbsp; Zenyth cocktail bar &nbsp;✦&nbsp; Svätoplukovo námestie 1/B &nbsp;✦&nbsp; Nitra &nbsp;✦&nbsp;</span>
-        <span>Zenyth cocktail bar &nbsp;✦&nbsp; Svätoplukovo námestie 1/B &nbsp;✦&nbsp; Nitra &nbsp;✦&nbsp; Zenyth cocktail bar &nbsp;✦&nbsp; Svätoplukovo námestie 1/B &nbsp;✦&nbsp; Nitra &nbsp;✦&nbsp;</span>
-      </div>
-    </div>
-
     <section class="cocktails" id="koktejly">
-      <div class="cocktails-intro">
-        <div>
-          <h2>Koktejly</h2>
-          <p class="section-note">Autorské drinky, klasika a sezónna ponuka. Fotky z baru.</p>
-        </div>
-        <div class="moon" data-reveal="fade">
-          <picture>
-            <source type="image/webp" srcset="photos/koktejl-cerveny.webp">
-            <img src="photos/koktejl-cerveny.jpg" width="1200" height="1488" loading="lazy"
-                 alt="Červený koktejl v pohári s bodkovaným reliéfom, ozdobený malinou a mätou">
-          </picture>
-        </div>
+      <div class="section-head">
+        <h2>Koktejly</h2>
+        <p class="section-note">Autorské drinky, klasika a sezónna ponuka. Fotky sú z baru.</p>
       </div>
       <ul class="cocktail-row">
-        <li data-reveal="wipe">
-          <picture>
-            <source type="image/webp" srcset="photos/koktejl-medeny-hrncek.webp">
-            <img src="photos/koktejl-medeny-hrncek.jpg" width="1200" height="2132" loading="lazy"
-                 alt="Medený hrnček s drveným ľadom, limetou a mätou na čiernom pozadí">
-          </picture>
+        <li>
+          <div class="arch-frame">
+            <picture>
+              <source type="image/webp" srcset="photos/koktejl-cerveny.webp">
+              <img src="photos/koktejl-cerveny.jpg" width="1200" height="1488" loading="lazy"
+                   alt="Červený koktejl v pohári s bodkovaným reliéfom, ozdobený malinou a mätou">
+            </picture>
+          </div>
         </li>
-        <li data-reveal="wipe">
-          <picture>
-            <source type="image/webp" srcset="photos/koktejl-coupe-pena.webp">
-            <img src="photos/koktejl-coupe-pena.jpg" width="1200" height="1800" loading="lazy"
-                 alt="Koktejl v pohári coupe s bielou penou a troma kávovými zrnkami na fialovom pozadí">
-          </picture>
+        <li>
+          <div class="arch-frame">
+            <picture>
+              <source type="image/webp" srcset="photos/koktejl-medeny-hrncek.webp">
+              <img src="photos/koktejl-medeny-hrncek.jpg" width="1200" height="2132" loading="lazy"
+                   alt="Medený hrnček s drveným ľadom, limetou a mätou na čiernom pozadí">
+            </picture>
+          </div>
         </li>
-        <li data-reveal="wipe">
-          <picture>
-            <source type="image/webp" srcset="photos/koktejl-jahody.webp">
-            <img src="photos/koktejl-jahody.jpg" width="1200" height="1500" loading="lazy"
-                 alt="Ružový koktejl s jahodami vo veľkom pohári, vedľa fľaštičky na drevenom podstavci">
-          </picture>
+        <li>
+          <div class="arch-frame">
+            <picture>
+              <source type="image/webp" srcset="photos/koktejl-coupe-pena.webp">
+              <img src="photos/koktejl-coupe-pena.jpg" width="1200" height="1800" loading="lazy"
+                   alt="Koktejl v pohári coupe s bielou penou a troma kávovými zrnkami na fialovom pozadí">
+            </picture>
+          </div>
+        </li>
+        <li>
+          <div class="arch-frame">
+            <picture>
+              <source type="image/webp" srcset="photos/koktejl-jahody.webp">
+              <img src="photos/koktejl-jahody.jpg" width="1200" height="1500" loading="lazy"
+                   alt="Ružový koktejl s jahodami vo veľkom pohári, vedľa fľaštičky na drevenom podstavci">
+            </picture>
+          </div>
         </li>
       </ul>
     </section>
@@ -187,11 +179,13 @@
           <button class="notebook-next" type="button" data-notebook-next>Ďalšia strana</button>
         </div>
       </div>
-      <picture class="menu-photo" data-reveal="wipe">
-        <source type="image/webp" srcset="photos/koktejly-rastliny.webp">
-        <img src="photos/koktejly-rastliny.jpg" width="1200" height="1600" loading="lazy"
-             alt="Dva koktejly s mätou na drevenom stolíku medzi listnatými rastlinami pri okne">
-      </picture>
+      <div class="arch-frame menu-photo">
+        <picture>
+          <source type="image/webp" srcset="photos/koktejly-rastliny.webp">
+          <img src="photos/koktejly-rastliny.jpg" width="1200" height="1600" loading="lazy"
+               alt="Dva koktejly s mätou na drevenom stolíku medzi listnatými rastlinami pri okne">
+        </picture>
+      </div>
     </section>
 
     <section class="terrace" id="terasa" aria-labelledby="terrace-title">
@@ -264,10 +258,10 @@
 
     <section class="events" id="akcie" aria-labelledby="events-title">
       <h2 id="events-title">DJ večery a sviatky</h2>
-      <ul class="bill" data-bill>
-        <li data-bill-text="Oldies party" data-direction="1"><span class="bill-name">Oldies party</span></li>
-        <li data-bill-text="Halloween" data-direction="-1"><span class="bill-name">Halloween</span></li>
-        <li data-bill-text="Silvester" data-direction="1"><span class="bill-name">Silvester</span></li>
+      <ul class="bill">
+        <li>Oldies party</li>
+        <li>Halloween</li>
+        <li>Silvester</li>
       </ul>
       <div class="events-note">
         <p>Program a termíny zverejňujeme na Instagrame. Na veľké večery si stôl rezervujte vopred.</p>
@@ -299,36 +293,26 @@
           </div>
           <p class="rating"><a href="https://www.google.com/maps/place/Zenyth+Bar/@48.3143914,18.0871714,17z" rel="noopener">4,6 z 5 · 187 hodnotení na Google</a></p>
         </div>
-        <div class="map-arch">
+        <div class="arch-frame map-arch">
           <iframe class="map" title="Mapa: Zenyth Bar, Svätoplukovo námestie 1/B, Nitra" loading="lazy"
                   src="https://www.google.com/maps?q=48.3143914,18.0871714&amp;z=17&amp;output=embed"></iframe>
-          <span class="map-ring" aria-hidden="true"></span>
         </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <p class="footer-social">
+    <p class="footer-links">
       <a href="https://www.instagram.com/zenyth_cocktail_bar/" rel="noopener">Instagram</a>
       <a href="https://www.facebook.com/cupolabar" rel="noopener">Facebook</a>
+      <a href="ochrana-udajov.html">Ochrana údajov</a>
     </p>
     <p class="footer-note">Návrh webstránky — [DOPLNIŤ názov štúdia]. Nejde o oficiálnu stránku Zenyth Bar.</p>
   </footer>
 
-  <a class="orb" href="https://zenythbar.eatbu.com/" rel="noopener" aria-label="Rezervovať stôl">
-    <svg class="orb-ring" viewBox="0 0 120 120" aria-hidden="true" focusable="false">
-      <defs>
-        <path id="orb-path" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/>
-      </defs>
-      <text><textPath href="#orb-path" textLength="270" lengthAdjust="spacing">Rezervovať • Zavolať • Rezervovať • Zavolať •</textPath></text>
-    </svg>
-    <svg class="orb-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/></svg>
-  </a>
-
   <nav class="dock" aria-label="Rýchle akcie">
     <a class="button button-line" href="tel:+421949704217">Zavolať</a>
-    <a class="button button-gold" href="https://zenythbar.eatbu.com/" rel="noopener">Rezervovať</a>
+    <a class="button button-gold" href="https://zenythbar.eatbu.com/" rel="noopener">Rezervovať stôl</a>
   </nav>
 </body>
 </html>

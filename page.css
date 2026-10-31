@@ -1,0 +1,103 @@
+:root {
+  --page-bg: var(--green);
+  --page-ink: var(--cream);
+  --page-accent: var(--gold);
+  --page-accent-ink: var(--ink);
+  --page-line: rgba(242, 234, 215, 0.2);
+  --page-display-font: var(--font-display);
+  --page-body-font: var(--font-body);
+}
+
+.page-body {
+  min-height: 100vh;
+  padding-bottom: 0;
+  background: var(--page-bg);
+  color: var(--page-ink);
+  font-family: var(--page-body-font);
+}
+
+.page {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 4rem;
+}
+
+.page-home {
+  display: inline-block;
+  margin-bottom: 3rem;
+  padding: 0.5rem 0;
+  color: var(--page-accent);
+  font-family: var(--page-display-font);
+  font-size: 1.75rem;
+  text-decoration: none;
+}
+
+.page-content h1 {
+  margin-bottom: 1rem;
+  font-family: var(--page-display-font);
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  line-height: 1.05;
+}
+
+.page-content h2 {
+  margin: 2.5rem 0 0.75rem;
+  font-family: var(--page-display-font);
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.page-content p,
+.page-content li {
+  line-height: 1.65;
+}
+
+.page-content ul {
+  padding-left: 1.25rem;
+}
+
+.page-lead {
+  font-size: 1.2rem;
+}
+
+.page-code {
+  margin: 0;
+  color: var(--page-accent);
+  font-family: var(--page-display-font);
+  font-size: clamp(5rem, 24vw, 10rem);
+  line-height: 1;
+}
+
+.page-button {
+  display: inline-flex;
+  align-items: center;
+  min-height: 3.25rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--page-accent);
+  color: var(--page-accent-ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.page-button:hover {
+  background: var(--page-ink);
+}
+
+.page-content a:not(.page-button) {
+  text-decoration-color: var(--page-accent);
+  text-underline-offset: 0.2em;
+}
+
+.page-footer {
+  display: flex;
+  gap: 1.5rem;
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 2.5rem;
+  border-top: 1px solid var(--page-line);
+  font-size: 0.9rem;
+}
+
+.page-footer a {
+  display: inline-block;
+  padding: 0.5rem 0;
+}
